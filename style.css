@@ -1,0 +1,155 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --mobile-width: 375px;
+  --desktop-width: 1440px;
+
+  --darkCyan: hsl(185, 75%, 39%);
+  --darkDesatBlue: hsl(229, 23%, 23%);
+  --darkGrayishBlue: hsl(227, 10%, 46%);
+  --darkGray: hsl(0, 0%, 59%);
+}
+
+img {
+  max-width: 100%;
+  object-fit: contain;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 1.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--darkCyan);
+  padding: 0 1rem;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.card {
+  text-align: center;
+  position: relative;
+  background-color: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  width: var(--mobile-width);
+  max-width: 100%;
+  z-index: 3;
+  box-shadow: -1px 6px 32px -3px rgba(0, 0, 0, 0.35);
+}
+
+.container::before {
+  position: absolute;
+  content: "";
+  background: url(./images/bg-pattern-top.svg) 0 0 / contain no-repeat;
+  width: 20rem;
+  height: 50vh;
+  top: -20%;
+  left: -20%;
+}
+.container::after {
+  position: absolute;
+  content: "";
+  background: url(./images/bg-pattern-bottom.svg) 0 0 / contain no-repeat;
+  width: 30rem;
+  height: 60vh;
+  bottom: -30%;
+  right: -60%;
+}
+
+.card-top-img {
+  background-image: url(./images/bg-pattern-card.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 10rem;
+}
+
+.card-profile-img {
+  display: block;
+  overflow: hidden;
+  margin: -4rem auto 0rem auto;
+  background: url(./images/image-victor.jpg) 0 0 / cover no-repeat;
+  border-radius: 50%;
+  height: 8rem;
+  width: 8rem;
+  border: 3px solid white;
+}
+
+.card-body {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.person-name {
+  margin-bottom: 1em;
+}
+
+.person-name span {
+  color: var(--darkGrayishBlue);
+  opacity: 0.75;
+  display: inline-block;
+  margin-left: 0.6rem;
+}
+
+.location {
+  margin-bottom: 3rem;
+  opacity: 0.75;
+}
+
+.person-stats {
+  display: flex;
+  height: 5rem;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0rem 0 0.5rem;
+  border-top: 2px solid hsla(0, 0%, 59%, 0.281);
+}
+
+.person-stats p {
+  opacity: 0.4;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+@media (min-width: 1000px) {
+  .container {
+    max-width: var(--desktop-width);
+    width: 100%;
+    height: 70vh
+  }
+  .container::before {
+    position: absolute;
+    content: "";
+    background: url(./images/bg-pattern-top.svg) 0 0 / contain no-repeat;
+    width: 100%;
+    height: 70vh;
+    top: -45%;
+    left: 0%;
+  }
+  .container::after {
+    position: absolute;
+    content: "";
+    background: url(./images/bg-pattern-bottom.svg) 0 0 / contain no-repeat;
+    width: 110%;
+    height: 100%;
+    bottom: -55%;
+    right: -70%;
+  }
+}
